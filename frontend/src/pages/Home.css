@@ -1,0 +1,139 @@
+.hero {
+  background: linear-gradient(135deg, #232f3e 0%, #37475a 50%, #485769 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  color: #ccc;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background: #febd69;
+  color: #131921 !important;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 25px;
+  text-decoration: none !important;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-btn:hover {
+  background: #f3a847;
+  transform: translateY(-1px);
+  color: #131921 !important;
+}
+
+.home-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.category-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-bar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-bar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.category-bar button {
+  padding: 0.45rem 1.2rem;
+  border: 1px solid #d5d9d9;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+}
+
+.category-bar button.active {
+  background: #131921;
+  color: white;
+  border-color: #131921;
+}
+
+.category-bar button:hover:not(.active) {
+  border-color: #131921;
+  background: #f7f8f8;
+}
+
+.search-info {
+  padding: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #565959;
+}
+
+.search-clear {
+  margin-left: 1rem;
+  font-size: 0.85rem;
+}
+
+.results-count {
+  font-size: 0.85rem;
+  color: #565959;
+  margin-bottom: 0.75rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  color: #0f1111;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #565959;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+}
