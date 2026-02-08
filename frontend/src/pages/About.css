@@ -1,0 +1,219 @@
+/* About Hero */
+.about-hero {
+  background: linear-gradient(135deg, #1e3a5f 0%, #1a56db 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.15rem;
+}
+
+/* Story */
+.about-story {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.about-story-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 1.75rem;
+  color: #1e3a5f;
+  margin-bottom: 1rem;
+}
+
+.story-text p {
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.story-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a56db;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Mission & Vision */
+.mission-vision {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.mission-vision-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.mv-card {
+  padding: 2.5rem 2rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.mv-card h2 {
+  font-size: 1.5rem;
+  color: #1e3a5f;
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Why Choose Us */
+.why-us {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.why-us-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-us-inner > h2 {
+  font-size: 2rem;
+  color: #1e3a5f;
+  margin-bottom: 2.5rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  text-align: left;
+}
+
+.why-card {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.why-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26, 86, 219, 0.08);
+}
+
+.why-number {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a56db;
+  background: #eff6ff;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  color: #1e3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* About CTA */
+.about-cta {
+  background: linear-gradient(135deg, #1e3a5f 0%, #1a56db 100%);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+.about-cta h2 {
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-cta p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.about-cta-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #f59e0b;
+  color: #1e3a5f !important;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.about-cta-btn:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-story-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 1.75rem;
+  }
+}

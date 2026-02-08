@@ -7,8 +7,9 @@ import os
 
 from app.database import engine, Base
 from app.models import customer, category, product, order, order_detail, cart as cart_model  # noqa: F401
+from app.models import contact as contact_model  # noqa: F401
 from app.seed import seed_database
-from app.routes import auth, products, categories, cart, orders, admin
+from app.routes import auth, products, categories, cart, orders, admin, contact
 
 Base.metadata.create_all(bind=engine)
 
@@ -41,8 +42,9 @@ app.include_router(categories.router)
 app.include_router(cart.router)
 app.include_router(orders.router)
 app.include_router(admin.router)
+app.include_router(contact.router)
 
 
 @app.get("/")
 def root():
-    return {"message": "E-Commerce Platform API", "docs": "/docs"}
+    return {"message": "Thuan Phat Technology & Manufacturing Co., Ltd. API", "docs": "/docs"}

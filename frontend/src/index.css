@@ -6,8 +6,8 @@
 
 body {
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: #eaeded;
-  color: #0f1111;
+  background: #f8fafc;
+  color: #1e293b;
   min-height: 100vh;
 }
 
@@ -26,12 +26,12 @@ body {
 }
 
 a {
-  color: #0066c0;
+  color: #1a56db;
   text-decoration: none;
 }
 
 a:hover {
-  color: #c45500;
+  color: #1e3a5f;
   text-decoration: underline;
 }
 
