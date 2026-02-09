@@ -8,6 +8,7 @@ from app.models.cart import CartItem
 from app.models.customer import Customer
 from app.schemas.order import OrderOut, OrderDetailOut
 from app.auth.jwt import get_current_user
+from app.email import send_order_confirmation
 
 router = APIRouter(prefix="/api/orders", tags=["orders"])
 
@@ -57,6 +58,19 @@ def checkout(
     db.query(CartItem).filter(CartItem.customer_id == current_user.id).delete()
     db.commit()
     db.refresh(order)
+
+    if current_user.email:
+        total = sum(d.price for d in order.details)
+        send_order_confirmation(
+            to_email=current_user.email,
+            order_id=order.id,
+            order_details=[
+                {"name": d.product.name if d.product else "", "quantity": d.quantity, "price": d.price}
+                for d in order.details
+            ],
+            total=total,
+        )
+
     return _order_to_out(order)
 
 

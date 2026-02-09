@@ -31,63 +31,35 @@ def seed_database():
 
     # ── Categories ──────────────────────────────────────────────────
     categories = [
-        Category(name="Liquid Lustres & Ceramic Inks", sort_order=1),
-        Category(name="Paints & Coatings", sort_order=2),
-        Category(name="Glass Tubes & Rods", sort_order=3),
-        Category(name="Raw Materials & Chemicals", sort_order=4),
+        Category(name="Vật tư sản xuất", sort_order=1),
+        Category(name="Sản phẩm nội thất", sort_order=2),
     ]
     db.add_all(categories)
     db.flush()
 
     # ── Products ────────────────────────────────────────────────────
     products = [
-        # Liquid Lustres & Ceramic Inks
-        Product(name="Gold Liquid Lustre", price=0, quantity=0,
-                category_id=1, image=""),
-        Product(name="Silver Liquid Lustre", price=0, quantity=0,
-                category_id=1, image=""),
-        Product(name="Platinum Liquid Lustre", price=0, quantity=0,
-                category_id=1, image=""),
-        Product(name="Ceramic Printing Ink - Red", price=0, quantity=0,
-                category_id=1, image=""),
-        Product(name="Ceramic Printing Ink - Blue", price=0, quantity=0,
-                category_id=1, image=""),
-        Product(name="Ceramic Decal Transfer Paper", price=0, quantity=0,
-                category_id=1, image=""),
+        # Vật tư sản xuất
+        Product(name="Mầu vàng in men GPP392", price=450000, quantity=100,
+                category_id=1, image="Màu_vàng_in men_GPP392.jpg",
+                origin="China"),
+        Product(name="Chất bảo quản men 623", price=380000, quantity=80,
+                category_id=1, image="Chất_bảo_quản_men_623.jpg",
+                origin="Indonesia"),
+        Product(name="Bột men chảy flux 101652", price=520000, quantity=60,
+                category_id=1, image="Bột_men_chảy_flux_101652.jpg",
+                origin="Germany"),
+        Product(name="Mầu vàng vẽ men GG501/11", price=490000, quantity=75,
+                category_id=1, image="Màu_vàng_vẽ_men_GG501.jpg",
+                origin="Germany"),
 
-        # Paints & Coatings
-        Product(name="Acrylic Polymer Varnish", price=0, quantity=0,
-                category_id=2, image=""),
-        Product(name="Vinyl Polymer Coating", price=0, quantity=0,
-                category_id=2, image=""),
-        Product(name="Industrial Enamel Paint", price=0, quantity=0,
-                category_id=2, image=""),
-        Product(name="Heat-Resistant Ceramic Coating", price=0, quantity=0,
-                category_id=2, image=""),
-        Product(name="Glass Enamel Frit", price=0, quantity=0,
-                category_id=2, image=""),
-
-        # Glass Tubes & Rods
-        Product(name="Borosilicate Glass Tube", price=0, quantity=0,
-                category_id=3, image=""),
-        Product(name="Soda-Lime Glass Rod", price=0, quantity=0,
-                category_id=3, image=""),
-        Product(name="Quartz Glass Tube", price=0, quantity=0,
-                category_id=3, image=""),
-        Product(name="Colored Glass Rod", price=0, quantity=0,
-                category_id=3, image=""),
-
-        # Raw Materials & Chemicals
-        Product(name="Bentonite Clay", price=0, quantity=0,
-                category_id=4, image=""),
-        Product(name="Kaolin (China Clay)", price=0, quantity=0,
-                category_id=4, image=""),
-        Product(name="Feldspar Powder", price=0, quantity=0,
-                category_id=4, image=""),
-        Product(name="Silica Sand", price=0, quantity=0,
-                category_id=4, image=""),
-        Product(name="Zinc Oxide", price=0, quantity=0,
-                category_id=4, image=""),
+        # Sản phẩm nội thất
+        Product(name="Bình gốm hút lộc vẽ vàng đường kính 45cm cao 48cm", price=2500000, quantity=15,
+                category_id=2, image="Bình_gốm_hút_lộc_vẽ_vàng_đường_kính_45cm_cao_48cm.jpg",
+                origin="Việt Nam"),
+        Product(name="Bình gốm cắm đào vẽ vàng đường kính 40cm cao 48cm", price=2800000, quantity=10,
+                category_id=2, image="Bình_gốm_cắm_đào_vẽ_vàng_đường_kính_40cm_cao_48cm.mp4",
+                origin="Việt Nam"),
     ]
     db.add_all(products)
     db.flush()

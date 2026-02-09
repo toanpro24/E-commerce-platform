@@ -14,6 +14,7 @@ class Product(Base):
     category_id = Column(Integer, ForeignKey("categories.id"))
     is_active = Column(Boolean, default=True)
     image = Column(String(255), default="")
+    origin = Column(String(100), default="")
 
     category = relationship("Category", back_populates="products")
     order_details = relationship("OrderDetail", back_populates="product")

@@ -9,6 +9,7 @@ class CustomerOut(BaseModel):
     address: str
     city: str
     zip_code: str
+    email: str
     username: str
     role: str
 

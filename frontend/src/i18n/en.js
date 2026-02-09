@@ -6,6 +6,10 @@ export default {
     products: "Products",
     contact: "Contact",
     cta: "Get a Proposal",
+    cart: "Cart",
+    login: "Login",
+    logout: "Logout",
+    myOrders: "My Orders",
   },
 
   // Home
@@ -32,17 +36,12 @@ export default {
 
     categoriesTitle: "Our Product Categories",
     categoriesSubtitle:
-      "Specialty materials for the ceramic and glass manufacturing industry",
-    cat1Title: "Liquid Lustres & Ceramic Inks",
-    cat1Text: "Precious metal lustres and printing aids for ceramic decoration",
-    cat2Title: "Paints & Coatings",
+      "Production materials and interior ceramic products",
+    cat1Title: "Production Materials",
+    cat1Text: "Glazes, colorants, preservatives, and flux materials for ceramic manufacturing",
+    cat2Title: "Interior Products",
     cat2Text:
-      "Acrylic and vinyl polymer-based varnishes for industrial applications",
-    cat3Title: "Glass Tubes & Rods",
-    cat3Text:
-      "Precision glass components for manufacturing and laboratory use",
-    cat4Title: "Raw Materials",
-    cat4Text: "Bentonite clay and specialty chemicals for ceramic production",
+      "Handcrafted ceramic vases and decorative items with gold-painted designs",
 
     bannerTitle: "Need Materials for Your Production?",
     bannerText:
@@ -147,6 +146,62 @@ export default {
     hoursText: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 8:00 AM - 12:00 PM",
   },
 
+  // Auth
+  auth: {
+    loginTitle: "Login",
+    registerTitle: "Create Account",
+    username: "Username",
+    password: "Password",
+    firstName: "First Name",
+    lastName: "Last Name",
+    email: "Email",
+    phone: "Phone",
+    address: "Address",
+    city: "City",
+    zipCode: "Zip Code",
+    loginBtn: "Login",
+    registerBtn: "Create Account",
+    noAccount: "Don't have an account?",
+    hasAccount: "Already have an account?",
+    loginLink: "Login here",
+    registerLink: "Register here",
+    loginError: "Invalid username or password",
+    registerError: "Registration failed. Please try again.",
+  },
+
+  // Product Detail
+  productDetail: {
+    backToProducts: "Back to Products",
+    origin: "Origin",
+    quantity: "Quantity",
+    addToCart: "Add to Cart",
+    addedToCart: "Added to cart!",
+    addError: "Failed to add to cart",
+    price: "Price",
+  },
+
+  // Cart
+  cart: {
+    title: "Shopping Cart",
+    empty: "Your cart is empty.",
+    continueShopping: "Continue Shopping",
+    subtotal: "Subtotal",
+    checkout: "Proceed to Checkout",
+    checkoutSuccess: "Order placed successfully! Check your email for confirmation.",
+    checkoutError: "Failed to place order. Please try again.",
+  },
+
+  // Orders
+  orders: {
+    title: "My Orders",
+    empty: "You haven't placed any orders yet.",
+    orderId: "Order #",
+    product: "Product",
+    qty: "Qty",
+    subtotal: "Subtotal",
+    browseProducts: "Browse Products",
+  },
+
   // Footer
   footer: {
     brand: "Thuan Phat",
@@ -154,10 +209,8 @@ export default {
       "Specialty materials for the ceramic and glass manufacturing industry. Importing quality products from trusted global suppliers.",
     navTitle: "Navigation",
     productsTitle: "Products",
-    product1: "Ceramic Lustres & Inks",
-    product2: "Paints & Coatings",
-    product3: "Glass Tubes & Rods",
-    product4: "Raw Materials & Chemicals",
+    product1: "Production Materials",
+    product2: "Interior Products",
     contactTitle: "Contact",
     copyright:
       "Thuan Phat Technology & Manufacturing Company Limited. All rights reserved.",

@@ -97,6 +97,43 @@
   transform: translateY(-1px);
 }
 
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.navbar-cart-link,
+.navbar-orders-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.95rem !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.navbar-user {
+  font-size: 0.85rem;
+  color: #fbbf24;
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+
+.navbar-logout {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.navbar-logout:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -163,5 +200,27 @@
   .navbar-cta {
     margin-left: 0 !important;
     margin-top: 0.5rem;
+  }
+
+  .navbar-auth {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    gap: 0.25rem;
+  }
+
+  .navbar-auth a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-user {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-logout {
+    width: 100%;
+    padding: 0.65rem;
+    margin-top: 0.25rem;
   }
 }

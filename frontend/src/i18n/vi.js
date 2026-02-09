@@ -5,7 +5,11 @@ export default {
     about: "Gi\u1EDBi thi\u1EC7u",
     products: "S\u1EA3n ph\u1EA9m",
     contact: "Li\u00EAn h\u1EC7",
-    cta: "Nh\u1EADn b\u00E1o gi\u00E1",
+    cta: "Nhận báo giá",
+    cart: "Giỏ hàng",
+    login: "Đăng nhập",
+    logout: "Đăng xuất",
+    myOrders: "Đơn hàng",
   },
 
   // Home
@@ -30,17 +34,13 @@ export default {
     why4Text:
       "T\u1EADn d\u1EE5ng m\u1ED1i quan h\u1EC7 l\u00E2u d\u00E0i v\u1EDBi nh\u00E0 cung c\u1EA5p \u0111\u1EC3 mang \u0111\u1EBFn m\u1EE9c gi\u00E1 t\u1ED1t nh\u1EA5t cho h\u00F3a ch\u1EA5t v\u00E0 nguy\u00EAn li\u1EC7u chuy\u00EAn d\u1EE5ng.",
 
-    categoriesTitle: "Danh m\u1EE5c s\u1EA3n ph\u1EA9m",
+    categoriesTitle: "Danh mục sản phẩm",
     categoriesSubtitle:
-      "V\u1EADt li\u1EC7u chuy\u00EAn d\u1EE5ng cho ng\u00E0nh s\u1EA3n xu\u1EA5t g\u1ED1m s\u1EE9 v\u00E0 th\u1EE7y tinh",
-    cat1Title: "Ch\u1EA5t b\u00F3ng & M\u1EF1c in g\u1ED1m",
-    cat1Text: "Ch\u1EA5t b\u00F3ng kim lo\u1EA1i qu\u00FD v\u00E0 ph\u1EE5 gia in cho trang tr\u00ED g\u1ED1m s\u1EE9",
-    cat2Title: "S\u01A1n & L\u1EDBp ph\u1EE7",
-    cat2Text: "Vec-ni g\u1ED1c polymer acrylic v\u00E0 vinyl cho \u1EE9ng d\u1EE5ng c\u00F4ng nghi\u1EC7p",
-    cat3Title: "\u1ED0ng & Thanh th\u1EE7y tinh",
-    cat3Text: "Linh ki\u1EC7n th\u1EE7y tinh ch\u00EDnh x\u00E1c cho s\u1EA3n xu\u1EA5t v\u00E0 ph\u00F2ng th\u00ED nghi\u1EC7m",
-    cat4Title: "Nguy\u00EAn li\u1EC7u th\u00F4",
-    cat4Text: "\u0110\u1EA5t s\u00E9t bentonite v\u00E0 h\u00F3a ch\u1EA5t chuy\u00EAn d\u1EE5ng cho s\u1EA3n xu\u1EA5t g\u1ED1m",
+      "Vật tư sản xuất và sản phẩm nội thất gốm sứ",
+    cat1Title: "Vật tư sản xuất",
+    cat1Text: "Men, màu, chất bảo quản và bột men chảy cho sản xuất gốm sứ",
+    cat2Title: "Sản phẩm nội thất",
+    cat2Text: "Bình gốm thủ công vẽ vàng trang trí nội thất",
 
     bannerTitle: "B\u1EA1n c\u1EA7n nguy\u00EAn li\u1EC7u cho s\u1EA3n xu\u1EA5t?",
     bannerText:
@@ -145,17 +145,71 @@ export default {
     hoursText: "Th\u1EE9 2 - Th\u1EE9 6: 8:00 - 18:00\nTh\u1EE9 7: 8:00 - 12:00",
   },
 
+  // Auth
+  auth: {
+    loginTitle: "Đăng nhập",
+    registerTitle: "Tạo tài khoản",
+    username: "Tên đăng nhập",
+    password: "Mật khẩu",
+    firstName: "Họ",
+    lastName: "Tên",
+    email: "Email",
+    phone: "Điện thoại",
+    address: "Địa chỉ",
+    city: "Thành phố",
+    zipCode: "Mã bưu điện",
+    loginBtn: "Đăng nhập",
+    registerBtn: "Tạo tài khoản",
+    noAccount: "Chưa có tài khoản?",
+    hasAccount: "Đã có tài khoản?",
+    loginLink: "Đăng nhập tại đây",
+    registerLink: "Đăng ký tại đây",
+    loginError: "Sai tên đăng nhập hoặc mật khẩu",
+    registerError: "Đăng ký thất bại. Vui lòng thử lại.",
+  },
+
+  // Product Detail
+  productDetail: {
+    backToProducts: "Quay lại sản phẩm",
+    origin: "Xuất xứ",
+    quantity: "Số lượng",
+    addToCart: "Thêm vào giỏ",
+    addedToCart: "Đã thêm vào giỏ hàng!",
+    addError: "Không thể thêm vào giỏ",
+    price: "Giá",
+  },
+
+  // Cart
+  cart: {
+    title: "Giỏ hàng",
+    empty: "Giỏ hàng trống.",
+    continueShopping: "Tiếp tục mua sắm",
+    subtotal: "Tạm tính",
+    checkout: "Đặt hàng",
+    checkoutSuccess: "Đặt hàng thành công! Kiểm tra email để xác nhận.",
+    checkoutError: "Đặt hàng thất bại. Vui lòng thử lại.",
+  },
+
+  // Orders
+  orders: {
+    title: "Đơn hàng của tôi",
+    empty: "Bạn chưa có đơn hàng nào.",
+    orderId: "Đơn #",
+    product: "Sản phẩm",
+    qty: "SL",
+    subtotal: "Thành tiền",
+    browseProducts: "Xem sản phẩm",
+  },
+
   // Footer
   footer: {
-    brand: "Thu\u1EADn Ph\u00E1t",
+    brand: "Thuận Phát",
     brandText:
       "V\u1EADt li\u1EC7u chuy\u00EAn d\u1EE5ng cho ng\u00E0nh s\u1EA3n xu\u1EA5t g\u1ED1m s\u1EE9 v\u00E0 th\u1EE7y tinh. Nh\u1EADp kh\u1EA9u s\u1EA3n ph\u1EA9m ch\u1EA5t l\u01B0\u1EE3ng t\u1EEB nh\u00E0 cung c\u1EA5p uy t\u00EDn to\u00E0n c\u1EA7u.",
     navTitle: "\u0110i\u1EC1u h\u01B0\u1EDBng",
     productsTitle: "S\u1EA3n ph\u1EA9m",
-    product1: "Ch\u1EA5t b\u00F3ng & M\u1EF1c in g\u1ED1m",
-    product2: "S\u01A1n & L\u1EDBp ph\u1EE7",
-    product3: "\u1ED0ng & Thanh th\u1EE7y tinh",
-    product4: "Nguy\u00EAn li\u1EC7u & H\u00F3a ch\u1EA5t",
+    product1: "Vật tư sản xuất",
+    product2: "Sản phẩm nội thất",
     contactTitle: "Li\u00EAn h\u1EC7",
     copyright:
       "C\u00F4ng ty TNHH C\u00F4ng ngh\u1EC7 & S\u1EA3n xu\u1EA5t Thu\u1EADn Ph\u00E1t. B\u1EA3o l\u01B0u m\u1ECDi quy\u1EC1n.",

@@ -9,6 +9,7 @@ class ProductOut(BaseModel):
     category_id: int | None
     is_active: bool
     image: str
+    origin: str
 
     class Config:
         from_attributes = True
@@ -20,6 +21,7 @@ class ProductCreate(BaseModel):
     quantity: int = 0
     category_id: int | None = None
     image: str = ""
+    origin: str = ""
 
 
 class ProductUpdate(BaseModel):
@@ -29,3 +31,4 @@ class ProductUpdate(BaseModel):
     category_id: int | None = None
     is_active: bool | None = None
     image: str | None = None
+    origin: str | None = None

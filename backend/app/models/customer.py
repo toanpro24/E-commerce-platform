@@ -14,6 +14,7 @@ class Customer(Base):
     address = Column(String(200))
     city = Column(String(100))
     zip_code = Column(String(10))
+    email = Column(String(200), default="")
     username = Column(String(50), unique=True, nullable=False, index=True)
     password_hash = Column(String(255), nullable=False)
     role = Column(String(10), default="customer")  # "customer" or "admin"

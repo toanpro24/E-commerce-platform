@@ -61,24 +61,47 @@ export default function Products() {
           </div>
         ) : (
           <div className="products-grid">
-            {products.map((prod) => (
-              <div key={prod.id} className="product-showcase-card">
-                {prod.image && (
-                  <div className="showcase-img">
-                    <img
-                      src={`http://localhost:8000/images/${prod.image}`}
-                      alt={prod.name}
-                    />
+            {products.map((prod) => {
+              const isVideo = prod.image && prod.image.endsWith(".mp4");
+              return (
+                <Link to={`/products/${prod.id}`} key={prod.id} className="product-card-link">
+                <div className="product-showcase-card">
+                  {prod.image && (
+                    <div className="showcase-img">
+                      {isVideo ? (
+                        <video
+                          src={`http://localhost:8000/images/${encodeURIComponent(prod.image)}`}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      ) : (
+                        <img
+                          src={`http://localhost:8000/images/${encodeURIComponent(prod.image)}`}
+                          alt={prod.name}
+                        />
+                      )}
+                    </div>
+                  )}
+                  <div className="showcase-info">
+                    <h3>{prod.name}</h3>
+                    <p className="showcase-price">
+                      {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(prod.price)}
+                    </p>
+                    <div className="showcase-badges">
+                      <span className="showcase-category">
+                        {categories.find((c) => c.id === prod.category_id)?.name}
+                      </span>
+                      {prod.origin && (
+                        <span className="showcase-origin">{prod.origin}</span>
+                      )}
+                    </div>
                   </div>
-                )}
-                <div className="showcase-info">
-                  <h3>{prod.name}</h3>
-                  <span className="showcase-category">
-                    {categories.find((c) => c.id === prod.category_id)?.name}
-                  </span>
                 </div>
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         )}
 

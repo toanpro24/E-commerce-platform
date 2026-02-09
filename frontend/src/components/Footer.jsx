@@ -24,8 +24,6 @@ export default function Footer() {
           <h4>{f.productsTitle}</h4>
           <span>{f.product1}</span>
           <span>{f.product2}</span>
-          <span>{f.product3}</span>
-          <span>{f.product4}</span>
         </div>
         <div className="footer-col">
           <h4>{f.contactTitle}</h4>

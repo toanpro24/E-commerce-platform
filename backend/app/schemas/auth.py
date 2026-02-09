@@ -13,6 +13,7 @@ class RegisterRequest(BaseModel):
     address: str = ""
     city: str = ""
     zip_code: str = ""
+    email: str = ""
     username: str
     password: str
 

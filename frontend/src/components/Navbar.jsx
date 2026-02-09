@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { useLang } from "../context/LanguageContext";
 import { languages } from "../i18n";
 import "./Navbar.css";
@@ -8,6 +9,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const { lang, switchLang, t } = useLang();
+  const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
 
   const links = [
     { to: "/", label: t.nav.home },
@@ -15,6 +18,12 @@ export default function Navbar() {
     { to: "/products", label: t.nav.products },
     { to: "/contact", label: t.nav.contact },
   ];
+
+  const handleLogout = () => {
+    logout();
+    setMenuOpen(false);
+    navigate("/");
+  };
 
   return (
     <nav className="navbar">
@@ -56,13 +65,36 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link
-          to="/contact"
-          className="navbar-cta"
-          onClick={() => setMenuOpen(false)}
-        >
-          {t.nav.cta}
-        </Link>
+        {isAuthenticated ? (
+          <div className="navbar-auth">
+            <Link
+              to="/cart"
+              className={`navbar-cart-link ${pathname === "/cart" ? "active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t.nav.cart}
+            </Link>
+            <Link
+              to="/orders"
+              className={`navbar-orders-link ${pathname === "/orders" ? "active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t.nav.myOrders}
+            </Link>
+            <span className="navbar-user">{user.username}</span>
+            <button className="navbar-logout" onClick={handleLogout}>
+              {t.nav.logout}
+            </button>
+          </div>
+        ) : (
+          <Link
+            to="/login"
+            className="navbar-cta"
+            onClick={() => setMenuOpen(false)}
+          >
+            {t.nav.login}
+          </Link>
+        )}
       </div>
     </nav>
   );

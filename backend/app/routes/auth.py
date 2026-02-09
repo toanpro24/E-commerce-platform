@@ -21,6 +21,7 @@ def register(req: RegisterRequest, db: Session = Depends(get_db)):
         address=req.address,
         city=req.city,
         zip_code=req.zip_code,
+        email=req.email,
         username=req.username,
         password_hash=hash_password(req.password),
         role="customer",

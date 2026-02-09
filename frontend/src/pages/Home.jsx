@@ -60,14 +60,6 @@ export default function Home() {
               <h3>{h.cat2Title}</h3>
               <p>{h.cat2Text}</p>
             </Link>
-            <Link to="/products" className="preview-card">
-              <h3>{h.cat3Title}</h3>
-              <p>{h.cat3Text}</p>
-            </Link>
-            <Link to="/products" className="preview-card">
-              <h3>{h.cat4Title}</h3>
-              <p>{h.cat4Text}</p>
-            </Link>
           </div>
         </div>
       </section>

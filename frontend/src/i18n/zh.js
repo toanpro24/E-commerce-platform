@@ -5,7 +5,11 @@ export default {
     about: "\u5173\u4E8E\u6211\u4EEC",
     products: "\u4EA7\u54C1",
     contact: "\u8054\u7CFB\u6211\u4EEC",
-    cta: "\u83B7\u53D6\u62A5\u4EF7",
+    cta: "获取报价",
+    cart: "购物车",
+    login: "登录",
+    logout: "退出",
+    myOrders: "我的订单",
   },
 
   // Home
@@ -30,16 +34,12 @@ export default {
     why4Text:
       "\u5229\u7528\u4E0E\u4F9B\u5E94\u5546\u7684\u957F\u671F\u5408\u4F5C\u5173\u7CFB\uFF0C\u4E3A\u7279\u79CD\u5316\u5B66\u54C1\u548C\u539F\u6750\u6599\u63D0\u4F9B\u6700\u4F18\u4EF7\u683C\u3002",
 
-    categoriesTitle: "\u4EA7\u54C1\u7C7B\u522B",
-    categoriesSubtitle: "\u9676\u74F7\u548C\u73BB\u7483\u5236\u9020\u884C\u4E1A\u4E13\u7528\u6750\u6599",
-    cat1Title: "\u6DB2\u4F53\u5149\u6CFD\u5242\u4E0E\u9676\u74F7\u6CB9\u58A8",
-    cat1Text: "\u8D35\u91D1\u5C5E\u5149\u6CFD\u5242\u548C\u5370\u5237\u52A9\u5242\uFF0C\u7528\u4E8E\u9676\u74F7\u88C5\u9970",
-    cat2Title: "\u6CB9\u6F06\u4E0E\u6D82\u6599",
-    cat2Text: "\u4E19\u70EF\u9178\u548C\u4E59\u70EF\u57FA\u805A\u5408\u7269\u6E05\u6F06\uFF0C\u7528\u4E8E\u5DE5\u4E1A\u5E94\u7528",
-    cat3Title: "\u73BB\u7483\u7BA1\u4E0E\u73BB\u7483\u68D2",
-    cat3Text: "\u7CBE\u5BC6\u73BB\u7483\u90E8\u4EF6\uFF0C\u7528\u4E8E\u5236\u9020\u548C\u5B9E\u9A8C\u5BA4",
-    cat4Title: "\u539F\u6750\u6599",
-    cat4Text: "\u818F\u6DA6\u571F\u548C\u7279\u79CD\u5316\u5B66\u54C1\uFF0C\u7528\u4E8E\u9676\u74F7\u751F\u4EA7",
+    categoriesTitle: "产品类别",
+    categoriesSubtitle: "生产材料和室内陶瓷产品",
+    cat1Title: "生产材料",
+    cat1Text: "釉料、色料、防腐剂和助熔剂，用于陶瓷生产",
+    cat2Title: "室内产品",
+    cat2Text: "手工金绘陶瓷花瓶和装饰品",
 
     bannerTitle: "\u9700\u8981\u751F\u4EA7\u6750\u6599\uFF1F",
     bannerText:
@@ -138,17 +138,71 @@ export default {
     hoursText: "\u5468\u4E00\u81F3\u5468\u4E94: 8:00 - 18:00\n\u5468\u516D: 8:00 - 12:00",
   },
 
+  // Auth
+  auth: {
+    loginTitle: "登录",
+    registerTitle: "创建账户",
+    username: "用户名",
+    password: "密码",
+    firstName: "姓",
+    lastName: "名",
+    email: "电子邮件",
+    phone: "电话",
+    address: "地址",
+    city: "城市",
+    zipCode: "邮编",
+    loginBtn: "登录",
+    registerBtn: "创建账户",
+    noAccount: "没有账户？",
+    hasAccount: "已有账户？",
+    loginLink: "点此登录",
+    registerLink: "点此注册",
+    loginError: "用户名或密码错误",
+    registerError: "注册失败，请重试。",
+  },
+
+  // Product Detail
+  productDetail: {
+    backToProducts: "返回产品列表",
+    origin: "产地",
+    quantity: "数量",
+    addToCart: "加入购物车",
+    addedToCart: "已加入购物车！",
+    addError: "无法加入购物车",
+    price: "价格",
+  },
+
+  // Cart
+  cart: {
+    title: "购物车",
+    empty: "购物车为空。",
+    continueShopping: "继续购物",
+    subtotal: "小计",
+    checkout: "结算下单",
+    checkoutSuccess: "下单成功！请查看邮件确认。",
+    checkoutError: "下单失败，请重试。",
+  },
+
+  // Orders
+  orders: {
+    title: "我的订单",
+    empty: "您还没有订单。",
+    orderId: "订单 #",
+    product: "产品",
+    qty: "数量",
+    subtotal: "小计",
+    browseProducts: "浏览产品",
+  },
+
   // Footer
   footer: {
-    brand: "\u987A\u53D1",
+    brand: "顺发",
     brandText:
       "\u9676\u74F7\u548C\u73BB\u7483\u5236\u9020\u884C\u4E1A\u4E13\u7528\u6750\u6599\u3002\u4ECE\u503C\u5F97\u4FE1\u8D56\u7684\u5168\u7403\u4F9B\u5E94\u5546\u8FDB\u53E3\u4F18\u8D28\u4EA7\u54C1\u3002",
     navTitle: "\u5BFC\u822A",
     productsTitle: "\u4EA7\u54C1",
-    product1: "\u9676\u74F7\u5149\u6CFD\u5242\u4E0E\u6CB9\u58A8",
-    product2: "\u6CB9\u6F06\u4E0E\u6D82\u6599",
-    product3: "\u73BB\u7483\u7BA1\u4E0E\u73BB\u7483\u68D2",
-    product4: "\u539F\u6750\u6599\u4E0E\u5316\u5B66\u54C1",
+    product1: "生产材料",
+    product2: "室内产品",
     contactTitle: "\u8054\u7CFB\u65B9\u5F0F",
     copyright: "\u987A\u53D1\u79D1\u6280\u4E0E\u5236\u9020\u6709\u9650\u516C\u53F8\u3002\u7248\u6743\u6240\u6709\u3002",
   },
