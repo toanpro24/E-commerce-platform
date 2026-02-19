@@ -34,6 +34,7 @@ export default function Cart() {
     try {
       const updated = await updateCartItem(item.id, newQty);
       setItems((prev) => prev.map((i) => (i.id === item.id ? updated : i)));
+      window.dispatchEvent(new Event("cart-change"));
     } catch {
       toast.error("Error");
     }
@@ -43,6 +44,7 @@ export default function Cart() {
     try {
       await removeCartItem(item.id);
       setItems((prev) => prev.filter((i) => i.id !== item.id));
+      window.dispatchEvent(new Event("cart-change"));
     } catch {
       toast.error("Error");
     }
@@ -52,6 +54,7 @@ export default function Cart() {
     setChecking(true);
     try {
       await checkout();
+      window.dispatchEvent(new Event("cart-change"));
       toast.success(c.checkoutSuccess);
       navigate("/orders");
     } catch {

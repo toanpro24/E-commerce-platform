@@ -19,7 +19,7 @@ def _order_to_out(order: Order) -> OrderOut:
         customer_id=order.customer_id,
         order_date=order.order_date,
         status=order.status,
-        customer_name=f"{order.customer.first_name} {order.customer.last_name}",
+        customer_name=f"{order.customer.last_name} {order.customer.first_name}",
         details=[
             OrderDetailOut(
                 id=d.id,
@@ -34,7 +34,7 @@ def _order_to_out(order: Order) -> OrderOut:
 
 
 @router.post("/checkout", response_model=OrderOut)
-def checkout(
+async def checkout(
     current_user: Customer = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
@@ -61,7 +61,7 @@ def checkout(
 
     if current_user.email:
         total = sum(d.price for d in order.details)
-        send_order_confirmation(
+        await send_order_confirmation(
             to_email=current_user.email,
             order_id=order.id,
             order_details=[

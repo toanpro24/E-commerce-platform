@@ -4,7 +4,8 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.customer import Customer
 from app.schemas.auth import LoginRequest, RegisterRequest, TokenResponse
-from app.auth.jwt import hash_password, verify_password, create_access_token
+from app.schemas.customer import CustomerOut, CustomerUpdate
+from app.auth.jwt import hash_password, verify_password, create_access_token, get_current_user
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
@@ -45,3 +46,21 @@ def login(req: LoginRequest, db: Session = Depends(get_db)):
 
     token = create_access_token({"sub": user.username, "role": user.role})
     return TokenResponse(access_token=token, role=user.role, username=user.username)
+
+
+@router.get("/me", response_model=CustomerOut)
+def get_me(current_user: Customer = Depends(get_current_user)):
+    return current_user
+
+
+@router.put("/me", response_model=CustomerOut)
+def update_me(
+    data: CustomerUpdate,
+    current_user: Customer = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    for field, value in data.model_dump(exclude_unset=True).items():
+        setattr(current_user, field, value)
+    db.commit()
+    db.refresh(current_user)
+    return current_user

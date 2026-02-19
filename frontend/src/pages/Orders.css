@@ -39,6 +39,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .order-header {
@@ -142,6 +143,37 @@
 .order-details td:last-child {
   text-align: right;
   font-weight: 600;
+}
+
+.orders-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.orders-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  text-align: center;
+}
+
+.orders-stat-number {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e3a5f;
+}
+
+.orders-stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
 }
 
 @media (max-width: 600px) {

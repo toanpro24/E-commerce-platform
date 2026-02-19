@@ -88,7 +88,7 @@ def _order_to_out(order: Order) -> OrderOut:
         customer_id=order.customer_id,
         order_date=order.order_date,
         status=order.status,
-        customer_name=f"{order.customer.first_name} {order.customer.last_name}",
+        customer_name=f"{order.customer.last_name} {order.customer.first_name}",
         details=[
             OrderDetailOut(
                 id=d.id,

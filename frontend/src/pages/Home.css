@@ -3,11 +3,38 @@
   background: linear-gradient(135deg, #1e3a5f 0%, #1a56db 50%, #3b82f6 100%);
   padding: 5rem 2rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero-content {
   max-width: 700px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content h1 {
@@ -93,11 +120,24 @@
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
 }
 
 .highlight-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(26, 86, 219, 0.1), 0 16px 32px rgba(26, 86, 219, 0.06);
+}
+
+.highlight-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1a56db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .highlight-card h3 {
@@ -110,6 +150,94 @@
   font-size: 0.9rem;
   color: #64748b;
   line-height: 1.6;
+}
+
+/* Featured Products */
+.featured-products {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.featured-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.featured-inner h2 {
+  font-size: 2rem;
+  color: #1e3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.featured-card {
+  display: block;
+  background: white;
+  border-radius: 12px;
+  text-decoration: none !important;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(26, 86, 219, 0.1), 0 16px 32px rgba(26, 86, 219, 0.06);
+  border-color: #1a56db;
+}
+
+.featured-card-img {
+  height: 180px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.featured-card-img img,
+.featured-card-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-card-body {
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+.featured-card-body h3 {
+  font-size: 0.95rem;
+  color: #1e3a5f;
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.featured-card-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a56db;
+}
+
+.featured-view-all {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1a56db;
+  text-decoration: none !important;
+  transition: color 0.15s;
+}
+
+.featured-view-all:hover {
+  color: #1e3a5f;
+  text-decoration: underline !important;
 }
 
 /* Product Preview */
@@ -138,7 +266,7 @@
 
 .preview-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -154,7 +282,7 @@
 
 .preview-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(26, 86, 219, 0.1), 0 16px 32px rgba(26, 86, 219, 0.06);
   border-color: #1a56db;
 }
 
@@ -215,7 +343,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .highlights-grid,
-  .preview-grid {
+  .featured-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -234,11 +362,13 @@
   }
 
   .highlights-grid,
+  .featured-grid,
   .preview-grid {
     grid-template-columns: 1fr;
   }
 
   .highlights-inner h2,
+  .featured-inner h2,
   .product-preview-inner h2,
   .cta-inner h2 {
     font-size: 1.5rem;

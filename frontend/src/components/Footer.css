@@ -42,6 +42,17 @@
   text-decoration: none;
 }
 
+.footer-contact-item {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  color: #64748b;
+}
+
 .footer-bottom {
   border-top: 1px solid #2d4a6f;
   text-align: center;

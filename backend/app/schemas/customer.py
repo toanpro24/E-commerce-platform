@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 
 
@@ -12,6 +14,7 @@ class CustomerOut(BaseModel):
     email: str
     username: str
     role: str
+    created_at: datetime | None = None
 
     class Config:
         from_attributes = True

@@ -4,6 +4,7 @@ import { getProduct, getCategories } from "../api/products";
 import { addToCart } from "../api/cart";
 import { useAuth } from "../context/AuthContext";
 import { useLang } from "../context/LanguageContext";
+import { localName } from "../utils/localize";
 import { useToast } from "../components/Toast";
 import Spinner from "../components/Spinner";
 import "./ProductDetail.css";
@@ -19,7 +20,7 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [adding, setAdding] = useState(false);
   const { isAuthenticated } = useAuth();
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const pd = t.productDetail;
   const navigate = useNavigate();
   const toast = useToast();
@@ -42,6 +43,7 @@ export default function ProductDetail() {
     setAdding(true);
     try {
       await addToCart(product.id, qty);
+      window.dispatchEvent(new Event("cart-change"));
       toast.success(pd.addedToCart);
     } catch {
       toast.error(pd.addError || "Error");
@@ -54,7 +56,8 @@ export default function ProductDetail() {
   if (!product) return null;
 
   const isVideo = product.image && product.image.endsWith(".mp4");
-  const catName = categories.find((c) => c.id === product.category_id)?.name;
+  const cat = categories.find((c) => c.id === product.category_id);
+  const catName = localName(cat, lang);
 
   return (
     <div className="detail-page page-enter">
@@ -72,6 +75,8 @@ export default function ProductDetail() {
                 muted
                 loop
                 playsInline
+                preload="auto"
+                ref={(el) => { if (el) el.play().catch(() => {}); }}
               />
             ) : (
               <img
@@ -82,7 +87,7 @@ export default function ProductDetail() {
         </div>
 
         <div className="detail-info">
-          <h1>{product.name}</h1>
+          <h1>{localName(product, lang)}</h1>
 
           <div className="detail-badges">
             {catName && <span className="detail-cat">{catName}</span>}

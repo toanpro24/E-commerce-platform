@@ -37,6 +37,27 @@ export default function Orders() {
     <div className="orders-page page-enter">
       <h1>{o.title}</h1>
 
+      {orders.length > 0 && (
+        <div className="orders-stats">
+          <div className="orders-stat">
+            <span className="orders-stat-number">{orders.length}</span>
+            <span className="orders-stat-label">{o.totalOrdersLabel}</span>
+          </div>
+          <div className="orders-stat">
+            <span className="orders-stat-number">
+              {formatVND(orders.reduce((s, ord) => s + ord.details.reduce((ds, d) => ds + d.price, 0), 0))}
+            </span>
+            <span className="orders-stat-label">{o.totalSpentLabel}</span>
+          </div>
+          <div className="orders-stat">
+            <span className="orders-stat-number">
+              {orders.filter((ord) => ord.status === "Pending").length}
+            </span>
+            <span className="orders-stat-label">{o.pendingLabel}</span>
+          </div>
+        </div>
+      )}
+
       {orders.length === 0 ? (
         <div className="orders-empty">
           <p>{o.empty}</p>

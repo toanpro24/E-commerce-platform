@@ -1,13 +1,17 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
+import useScrollReveal from "../hooks/useScrollReveal";
 import "./About.css";
 
 export default function About() {
   const { t } = useLang();
   const a = t.about;
+  const containerRef = useRef(null);
+  useScrollReveal(containerRef);
 
   return (
-    <div className="about page-enter">
+    <div className="about page-enter" ref={containerRef}>
       <section className="about-hero">
         <h1>{a.heroTitle}</h1>
         <p>{a.heroSubtitle}</p>
@@ -15,12 +19,12 @@ export default function About() {
 
       <section className="about-story">
         <div className="about-story-inner">
-          <div className="story-text">
+          <div className="story-text" data-reveal>
             <h2>{a.storyTitle}</h2>
             <p>{a.storyP1}</p>
             <p>{a.storyP2}</p>
           </div>
-          <div className="story-stats">
+          <div className="story-stats" data-reveal style={{ transitionDelay: "0.15s" }}>
             <div className="stat">
               <span className="stat-number">{a.stat1Number}</span>
               <span className="stat-label">{a.stat1Label}</span>
@@ -43,11 +47,11 @@ export default function About() {
 
       <section className="mission-vision">
         <div className="mission-vision-inner">
-          <div className="mv-card">
+          <div className="mv-card" data-reveal>
             <h2>{a.missionTitle}</h2>
             <p>{a.missionText}</p>
           </div>
-          <div className="mv-card">
+          <div className="mv-card" data-reveal style={{ transitionDelay: "0.15s" }}>
             <h2>{a.visionTitle}</h2>
             <p>{a.visionText}</p>
           </div>
@@ -56,24 +60,24 @@ export default function About() {
 
       <section className="why-us">
         <div className="why-us-inner">
-          <h2>{a.whyTitle}</h2>
+          <h2 data-reveal>{a.whyTitle}</h2>
           <div className="why-grid">
-            <div className="why-card">
+            <div className="why-card" data-reveal style={{ transitionDelay: "0s" }}>
               <div className="why-number">01</div>
               <h3>{a.why1Title}</h3>
               <p>{a.why1Text}</p>
             </div>
-            <div className="why-card">
+            <div className="why-card" data-reveal style={{ transitionDelay: "0.1s" }}>
               <div className="why-number">02</div>
               <h3>{a.why2Title}</h3>
               <p>{a.why2Text}</p>
             </div>
-            <div className="why-card">
+            <div className="why-card" data-reveal style={{ transitionDelay: "0.2s" }}>
               <div className="why-number">03</div>
               <h3>{a.why3Title}</h3>
               <p>{a.why3Text}</p>
             </div>
-            <div className="why-card">
+            <div className="why-card" data-reveal style={{ transitionDelay: "0.3s" }}>
               <div className="why-number">04</div>
               <h3>{a.why4Title}</h3>
               <p>{a.why4Text}</p>
@@ -82,7 +86,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="about-cta">
+      <section className="about-cta" data-reveal>
         <h2>{a.ctaTitle}</h2>
         <p>{a.ctaText}</p>
         <Link to="/contact" className="about-cta-btn">

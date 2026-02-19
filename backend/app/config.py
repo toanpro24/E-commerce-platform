@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from pydantic_settings import BaseSettings
+from fastapi_mail import ConnectionConfig
 
 
 class Settings(BaseSettings):
@@ -17,3 +20,15 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+mail_config = ConnectionConfig(
+    MAIL_USERNAME=settings.SMTP_USER,
+    MAIL_PASSWORD=settings.SMTP_PASSWORD,
+    MAIL_FROM=settings.SMTP_USER or settings.SMTP_FROM,
+    MAIL_PORT=settings.SMTP_PORT,
+    MAIL_SERVER=settings.SMTP_HOST,
+    MAIL_STARTTLS=True,
+    MAIL_SSL_TLS=False,
+    USE_CREDENTIALS=True,
+    TEMPLATE_FOLDER=Path(__file__).parent / "templates",
+)

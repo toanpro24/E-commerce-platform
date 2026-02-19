@@ -53,12 +53,12 @@ export default function Register() {
 
           <div className="auth-row">
             <div>
-              <label>{a.firstName} *</label>
-              <input value={form.first_name} onChange={update("first_name")} required />
-            </div>
-            <div>
               <label>{a.lastName} *</label>
               <input value={form.last_name} onChange={update("last_name")} required />
+            </div>
+            <div>
+              <label>{a.firstName} *</label>
+              <input value={form.first_name} onChange={update("first_name")} required />
             </div>
           </div>
 

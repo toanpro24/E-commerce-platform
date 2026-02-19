@@ -9,6 +9,8 @@ class Category(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False)
+    name_en = Column(String(100), default="")
+    name_zh = Column(String(100), default="")
     sort_order = Column(Integer, default=0)
 
     products = relationship("Product", back_populates="category")

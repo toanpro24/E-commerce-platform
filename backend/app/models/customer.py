@@ -1,4 +1,6 @@
-from sqlalchemy import Column, Integer, String
+from datetime import datetime
+
+from sqlalchemy import Column, DateTime, Integer, String
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -18,6 +20,7 @@ class Customer(Base):
     username = Column(String(50), unique=True, nullable=False, index=True)
     password_hash = Column(String(255), nullable=False)
     role = Column(String(10), default="customer")  # "customer" or "admin"
+    created_at = Column(DateTime, default=datetime.utcnow)
 
     orders = relationship("Order", back_populates="customer")
     cart_items = relationship("CartItem", back_populates="customer")

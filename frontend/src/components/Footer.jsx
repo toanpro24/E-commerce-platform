@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useLang } from "../context/LanguageContext";
 import "./Footer.css";
 
@@ -27,9 +28,15 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>{f.contactTitle}</h4>
-          <p>info@thuanphat.com</p>
-          <p>+84 24 1234 5678</p>
-          <p>Ba Dinh, Hanoi, Vietnam</p>
+          <p className="footer-contact-item">
+            <Mail size={14} /> info@thuanphat.com
+          </p>
+          <p className="footer-contact-item">
+            <Phone size={14} /> +84 24 1234 5678
+          </p>
+          <p className="footer-contact-item">
+            <MapPin size={14} /> Ba Dinh, Hanoi, Vietnam
+          </p>
         </div>
       </div>
       <div className="footer-bottom">

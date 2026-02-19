@@ -1,21 +1,35 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getProducts, getCategories } from "../api/products";
 import { useLang } from "../context/LanguageContext";
+import { localName } from "../utils/localize";
 import Spinner from "../components/Spinner";
 import "./Products.css";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState(() => {
+    const cat = searchParams.get("category");
+    return cat ? Number(cat) : null;
+  });
   const [loading, setLoading] = useState(true);
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const p = t.products;
 
   useEffect(() => {
     getCategories().then(setCategories).catch(() => {});
   }, []);
+
+  const handleCategoryChange = (catId) => {
+    setActiveCategory(catId);
+    if (catId) {
+      setSearchParams({ category: catId });
+    } else {
+      setSearchParams({});
+    }
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -38,7 +52,7 @@ export default function Products() {
         <div className="category-filter">
           <button
             className={!activeCategory ? "active" : ""}
-            onClick={() => setActiveCategory(null)}
+            onClick={() => handleCategoryChange(null)}
           >
             {p.allCategories}
           </button>
@@ -46,9 +60,9 @@ export default function Products() {
             <button
               key={cat.id}
               className={activeCategory === cat.id ? "active" : ""}
-              onClick={() => setActiveCategory(cat.id)}
+              onClick={() => handleCategoryChange(cat.id)}
             >
-              {cat.name}
+              {localName(cat, lang)}
             </button>
           ))}
         </div>
@@ -75,6 +89,8 @@ export default function Products() {
                           muted
                           loop
                           playsInline
+                          preload="auto"
+                          ref={(el) => { if (el) el.play().catch(() => {}); }}
                         />
                       ) : (
                         <img
@@ -85,13 +101,13 @@ export default function Products() {
                     </div>
                   )}
                   <div className="showcase-info">
-                    <h3>{prod.name}</h3>
+                    <h3>{localName(prod, lang)}</h3>
                     <p className="showcase-price">
                       {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(prod.price)}
                     </p>
                     <div className="showcase-badges">
                       <span className="showcase-category">
-                        {categories.find((c) => c.id === prod.category_id)?.name}
+                        {localName(categories.find((c) => c.id === prod.category_id), lang)}
                       </span>
                       {prod.origin && (
                         <span className="showcase-origin">{prod.origin}</span>
